@@ -30,6 +30,7 @@ type Mutex struct {
 	etag     string
 }
 
+// The JSON content of the mutex object.
 type mutexContent struct {
 	ID      string     `json:"id,omitempty"`
 	Expires *time.Time `json:"expires,omitempty"`
@@ -37,13 +38,13 @@ type mutexContent struct {
 }
 
 // NewMutex creates a new distributed mutex.
-func NewMutex(p provider.Provider, bucket, key string) (*Mutex, error) {
+func NewMutex(p provider.Provider, bucket, key string) *Mutex {
 	return &Mutex{
 		provider: p,
 		bucket:   bucket,
 		key:      key,
 		id:       uuid.New().String(),
-	}, nil
+	}
 }
 
 // Lock acquires the mutex. It blocks until the mutex is available.

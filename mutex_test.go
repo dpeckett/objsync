@@ -48,10 +48,7 @@ func TestMutex(t *testing.T) {
 	g, ctx := errgroup.WithContext(ctx)
 	for i := 0; i < 3; i++ {
 		g.Go(func() error {
-			mu, err := objsync.NewMutex(p, bucket, key)
-			if err != nil {
-				return err
-			}
+			mu := objsync.NewMutex(p, bucket, key)
 
 			for j := 0; j < 5; j++ {
 				fencingToken, err := mu.Lock(ctx, 5*time.Second)
@@ -61,7 +58,7 @@ func TestMutex(t *testing.T) {
 
 				// Verify the mutex is held by only one goroutine.
 				if n := atomic.AddInt32(&lockCounter, 1); n > 1 {
-					return fmt.Errorf("lock is held by %d goroutines (fencingToken: %d)", n, fencingToken)
+					return fmt.Errorf("lock is held by %d goroutines", n)
 				}
 
 				// Is the fencing token monotonically increasing?

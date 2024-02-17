@@ -25,10 +25,7 @@ func main() {
 	}
 
 	// Create a mutex.
-	mu, err := objsync.NewMutex(p, bucket, key)
-	if err != nil {
-		panic(err)
-	}
+	mu := objsync.NewMutex(p, bucket, key)
 
 	// Lock the mutex.
 	fencingToken, err := mu.Lock(ctx, 5*time.Second)

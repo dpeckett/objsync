@@ -33,10 +33,7 @@ if err != nil {
 	panic(err)
 }
 
-mu, err := objsync.NewMutex(p, bucket, key)
-if err != nil {
-	panic(err)
-}
+mu := objsync.NewMutex(p, bucket, key)
 
 fencingToken, err := mu.Lock(ctx, 5*time.Second)
 if err != nil {
