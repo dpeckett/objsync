@@ -28,7 +28,7 @@ Why? See my whitepaper: [All You Need Is S3](https://www.bucket-sailor.com/posts
 ## Usage
 
 ```go
-p, err := s3.NewProvider(ctx, endpointURL, "", accessKeyID, secretAccessKey)
+p, err := s3.NewProvider(ctx, endpointURL, region, accessKeyID, secretAccessKey)
 if err != nil {
 	panic(err)
 }
