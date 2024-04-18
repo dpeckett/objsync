@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/bucket-sailor/objsync"
-	"github.com/bucket-sailor/objsync/provider/s3"
+	"github.com/dpeckett/objsync"
+	"github.com/dpeckett/objsync/provider/s3"
 )
 
 func main() {

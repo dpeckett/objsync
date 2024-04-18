@@ -17,7 +17,7 @@ import (
 	"time"
 
 	"github.com/avast/retry-go/v4"
-	"github.com/bucket-sailor/objsync/provider"
+	"github.com/dpeckett/objsync/provider"
 	"github.com/google/uuid"
 )
 

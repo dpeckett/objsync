@@ -16,7 +16,7 @@ import (
 	"strings"
 
 	"cloud.google.com/go/storage"
-	"github.com/bucket-sailor/objsync/provider"
+	"github.com/dpeckett/objsync/provider"
 	"google.golang.org/api/googleapi"
 	"google.golang.org/api/option"
 )

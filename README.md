@@ -2,7 +2,7 @@
 
 A distributed synchronization library for Golang built on top of object storage.
 
-Why? See my whitepaper: [All You Need Is S3](https://www.bucket-sailor.com/posts/all-you-need-is-s3/).
+Why? See my whitepaper: [All You Need Is S3](https://www.dpeckett.com/posts/all-you-need-is-s3/).
 
 ## Features
 

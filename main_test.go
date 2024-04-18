@@ -58,7 +58,7 @@ func TestMain(m *testing.M) {
 
 func startS3Server(ctx context.Context, logger *slog.Logger) (tc.Container, error) {
 	req := tc.ContainerRequest{
-		Image:        "ghcr.io/bucket-sailor/picoceph:v0.2.1",
+		Image:        "ghcr.io/dpeckett/picoceph:v0.5.0",
 		ExposedPorts: []string{"7480/tcp"},
 		WaitingFor:   wait.ForListeningPort("7480/tcp"),
 		Privileged:   true,
